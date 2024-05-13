@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "91fa74f0-cace-42a3-9176-c01e9ba91144",
+		"name": "PruebaCatedra",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33657530"
+	},
+	"item": [
+		{
+			"name": "Crear eBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"Harry Potter\",\r\n    \"Author\": \"Miguel\",\r\n    \"Genre\": \"Batalla\",\r\n    \"Format\": \"PDF\",\r\n    \"Price\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/?genre=Comedia&format=PDF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Comedia"
+						},
+						{
+							"key": "author",
+							"value": "Juan",
+							"disabled": true
+						},
+						{
+							"key": "format",
+							"value": "PDF"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"La guerra\",\r\n    \"Author\": \"Ignacios\",\r\n    \"Genre\": \"comedia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeAvailability",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/1/change-availability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						"1",
+						"change-availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MakePurchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 1,\r\n    \"Quantity\": 2,\r\n    \"Amount\": 2000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncrementStock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Stock\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/1/increment-stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						"1",
+						"increment-stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/eBook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"eBook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
